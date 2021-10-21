@@ -11,6 +11,7 @@ env:
   GITHUB_REF: '${{ github.ref }}'
   WINDOWS_TARGET: x86_64-pc-windows-msvc
   MACOS_TARGET: x86_64-apple-darwin
+  MACOS_ARM_TARGET: arm64-apple-darwin
   LINUX_AMD64_TARGET: x86_64-unknown-linux-musl
   LINUX_ARM64_TARGET: aarch64-unknown-linux-musl
 
@@ -31,6 +32,9 @@ jobs:
             os: ubuntu-latest
             rust: stable
           - target: x86_64-apple-darwin
+            os: macos-latest
+            rust: stable
+          - target: arm64-apple-darwin
             os: macos-latest
             rust: stable
           - target: x86_64-pc-windows-msvc
